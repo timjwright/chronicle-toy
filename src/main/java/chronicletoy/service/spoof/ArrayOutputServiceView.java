@@ -4,8 +4,11 @@ import chronicletoy.Universe;
 import chronicletoy.controller.View;
 import chronicletoy.model.output.Product;
 import chronicletoy.service.OutputService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ArrayOutputServiceView implements View, OutputService {
+    Logger logger = LoggerFactory.getLogger(ArrayOutputServiceView.class);
     private String[] state = new String[Universe.PRODUCTS];
 
     @Override
@@ -20,7 +23,7 @@ public class ArrayOutputServiceView implements View, OutputService {
 
     @Override
     public void write(Product product) {
-        System.out.println("Updating: " + product);
+        logger.debug("Output " + product);
         state[product.getInstrumentId()] = product.toString();
     }
 }

@@ -20,13 +20,13 @@ public class Universe {
         controller.staticData(9, 1, 140);
         controller.staticData(10, 1, 80);
         controller.staticData(11, 1, 60);
-        controller.staticData(12, 2, 100);
+        controller.staticData(12, 1, 100);
         controller.staticData(13, 2, 110);
-        controller.staticData(14, 3, 120);
-        controller.staticData(15, 3, 130);
-        controller.staticData(16, 3, 140);
-        controller.staticData(17, 4, 100);
-        controller.staticData(18, 4, 110);
-        controller.staticData(19, 5, 100);
+        controller.staticData(14, 2, 120);
+        controller.staticData(15, 2, 130);
+        controller.staticData(16, 2, 140);
+        controller.staticData(17, 3, 100);
+        controller.staticData(18, 3, 110);
+        controller.staticData(19, 4, 100);
     }
 }

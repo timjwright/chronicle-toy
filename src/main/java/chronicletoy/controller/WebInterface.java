@@ -22,14 +22,17 @@ public class WebInterface {
         Service service = Service.ignite();
         service.port(8080);
         service.get("/start/:product", (req, res) -> {
-            controller.start(parseInt(req.params("product")));
-            return "OK";});
+            int product = parseInt(req.params("product"));
+            controller.start(product);
+            return view.get(product);});
         service.get("/stop/:product", (req, res) -> {
-            controller.stop(parseInt(req.params("product")));
-            return "OK";});
+            int product = parseInt(req.params("product"));
+            controller.stop(product);
+            return view.get(product);});
         service.get("/spread/:product/:spread", (req, res) -> {
-            controller.setParameters(parseInt(req.params("product")), parseInt(req.params("spread")));
-            return "OK";});
+            int product = parseInt(req.params("product"));
+            controller.setParameters(product, parseInt(req.params("spread")));
+            return view.get(product);});
         service.get("/view/:product", (req, res) -> view.get(parseInt(req.params("product"))));
         service.get("/view", (req, res) -> String.join("\n", view.get()));
         service.init();
